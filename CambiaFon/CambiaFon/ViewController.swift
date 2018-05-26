@@ -31,11 +31,15 @@ class ViewController: UIViewController {
         - sender: el interruptor
      */
     @IBAction func interruptorPulsado(_ sender: UISwitch) {
+        // Cambia el color de fondo del view controller, según la posición del interruptor en on u off.
         view.backgroundColor = sender.isOn == true ? .yellow : .darkGray
+        // Variable para escalar el interruptor.
         var escalado: CGAffineTransform = CGAffineTransform(scaleX: 2, y: 2)
+        // Si está encendido (on) el interruptor aumenta 2 veces su tamaño.
         if interruptor.isOn {
             escalado = .identity
         }
+        // Aplica el escalado al interruptor.
         sender.transform = escalado
     }
     
