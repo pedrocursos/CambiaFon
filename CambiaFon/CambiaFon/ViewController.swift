@@ -39,8 +39,10 @@ class ViewController: UIViewController {
         if interruptor.isOn {
             escalado = .identity
         }
-        // Aplica el escalado al interruptor.
-        sender.transform = escalado
+        // Aplica el escalado al interruptor con una animación tipo muelle.
+        UISwitch.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
+            sender.transform = escalado
+        }, completion: nil)
     }
     
 }
